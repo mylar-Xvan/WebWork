@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Profile &middot; Girls' Last Tour</title>
+  <meta name="description" content="Full profiles for Chito and Yuuri.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script>
+    (function () {
+      var data = {
+        qian: {
+          title: 'Chito &middot; &#12481;&#12488;',
+          cv: 'CV: Minase Inori',
+          figure: 'assets/img/qian.png',
+          shot1: 'assets/img/qian-info-pic1.png',
+          shot2: 'assets/img/qian-info-pic2.png',
+          quote: 'assets/img/qian-info.png',
+          next: 'ruri',
+          nextLabel: 'Meet Yuuri &rarr;',
+          bio: [
+            'A girl who keeps travelling with Yuuri after they leave the old man behind. Driving and repairing the Kettenkrad is her job.',
+            'Calm and clever. The few books she has picked up along the way are her treasure. In her spare time she either reads or writes down whatever happened that day.',
+            'She is cautious, so she will not reach for something she does not understand. But human history and civilisations fascinate her, and once she sees them she cannot look away.',
+            'Yuuri\'s antics give her a headache, yet she always forgives them in the end. She can slip past Yuuri\'s twisted logic, and that only works because of the trust they have built up on the road.',
+            'Her name is written as &ldquo;Sen&rdquo;. Of the two she is the one who thinks things through, and when trouble arrives she stays quiet for a moment before she speaks.'
+          ]
+        },
+        ruri: {
+          title: 'Yuuri &middot; &#12518;&#12540;&#12522;',
+          cv: 'CV: Kubo Yurika',
+          figure: 'assets/img/ruri.png',
+          shot1: 'assets/img/ruri-info-pic1.png',
+          shot2: 'assets/img/ruri-info-pic2.png',
+          quote: 'assets/img/ruri-info.png',
+          next: 'qian',
+          nextLabel: 'Meet Chito &rarr;',
+          bio: [
+            'Chito\'s partner, nicknamed &ldquo;Yu&rdquo;.',
+            'Reading, writing and thinking things through are not her strengths, but she is strong and used to handling firearms. Heavy lifting and keeping watch fall to her.',
+            'Almost everything else gets pushed onto Chito. Most of the time she just sprawls in the cargo bed and stares at nothing.',
+            'She is the exact opposite of the thoughtful Chito. She says whatever is on her mind and acts before she thinks, and because she loves surprises she keeps Chito on her toes.',
+            'Sometimes though, she brings Chito ideas that Chito would never have reached on her own&mdash;'
+          ]
+        }
+      };
+
+      var id = new URLSearchParams(location.search).get('id') || 'qian';
+      if (!data[id]) id = 'qian';
+      var entry = data[id];
+
+      document.addEventListener('DOMContentLoaded', function () {
+        document.title = entry.title.replace(/&middot;/g, '\u00b7') + ' \u00b7 Girls\' Last Tour';
+        document.getElementById('char-name').innerHTML = entry.title;
+        document.getElementById('char-cv').textContent = entry.cv;
+        document.getElementById('char-figure').src = entry.figure;
+        document.getElementById('char-figure').alt = 'Full body art';
+        document.getElementById('char-quote').src = entry.quote;
+        document.getElementById('char-shot-1').src = entry.shot1;
+        document.getElementById('char-shot-2').src = entry.shot2;
+        document.getElementById('char-next').href = 'character.html?id=' + entry.next;
+        document.getElementById('char-next').innerHTML = entry.nextLabel;
+
+        var bioBox = document.getElementById('char-bio');
+        bioBox.innerHTML = '';
+        for (var i = 0; i < entry.bio.length; i++) {
+          bioBox.innerHTML += '<p>' + entry.bio[i] + '</p>';
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html">Girls' <span>Last</span> Tour</a>
+      <button class="menu-toggle" type="button" aria-label="Toggle menu">
+        <i></i><i></i><i></i>
+      </button>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="characters.html">Characters</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap profile">
+
+    <div class="profile-figure">
+      <img id="char-figure" src="assets/img/qian.png" alt="Full body art">
+    </div>
+
+    <div class="profile-body">
+      <h1 id="char-name">Chito &middot; &#12481;&#12488;</h1>
+      <p class="cv-tag" id="char-cv">CV: Minase Inori</p>
+
+      <div class="bio" id="char-bio"></div>
+
+      <figure class="quote-panel">
+        <img id="char-quote" src="assets/img/qian-info.png" alt="Character quote">
+      </figure>
+
+      <div class="gallery">
+        <img id="char-shot-1" src="assets/img/qian-info-pic1.png" alt="Screenshot from the series">
+        <img id="char-shot-2" src="assets/img/qian-info-pic2.png" alt="Screenshot from the series">
+      </div>
+    </div>
+  </main>
+
+  <div class="wrap pager">
+    <a href="characters.html">&larr; Back to characters</a>
+    <a href="character.html?id=ruri" id="char-next" class="next">Meet Yuuri &rarr;</a>
+  </div>
+
+  <footer class="wrap footer">
+    <span>&copy; 2024 Girls' Last Tour &middot; Student project site</span>
+    <a href="contact.html">Write to us</a>
+    <span class="copyright">Artwork belongs to the original creators</span>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-label="Enlarged image">
+    <img src="" alt="">
+  </div>
+
+  <aside id="easter-egg" class="easter-egg" title="Click me">
+    <div class="rocket">
+      <img class="flame" src="assets/img/flame.png" alt="" aria-hidden="true">
+      <img class="subject" src="assets/img/keyframe.png" alt="Sketch of Chito and Yuuri">
+    </div>
+    <p class="hint">Click me</p>
+  </aside>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
