@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &middot; Girls' Last Tour</title>
+  <meta name="description" content="Write a message to this site.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="logo" href="index.html">Girls' <span>Last</span> Tour</a>
+      <button class="menu-toggle" type="button" aria-label="Toggle menu">
+        <i></i><i></i><i></i>
+      </button>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="characters.html">Characters</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="wrap page-head">
+    <h1>Contact</h1>
+    <p>Though the author will never read this.</p>
+  </section>
+
+  <main class="wrap contact-layout">
+
+    <form class="contact-form" id="contact-form" novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name">
+        <span class="field-error" id="error-name"></span>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" autocomplete="email">
+        <span class="field-error" id="error-email"></span>
+      </div>
+
+      <div class="field">
+        <label for="topic">What is this about</label>
+        <select id="topic" name="topic">
+          <option value="goods">Goods</option>
+          <option value="characters">Characters</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+        <span class="field-error" id="error-message"></span>
+      </div>
+
+      <button class="submit-btn" type="submit">Send</button>
+      <p class="form-message" id="form-message"></p>
+    </form>
+
+    <aside class="contact-aside">
+      <h2>Other ways</h2>
+      <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      <p>A reply is impossible.</p>
+
+      <h2>Buying goods</h2>
+      <p>Sizes and prices are all listed on the <a href="products.html">shop page</a>, so have a look before you ask.</p>
+
+      <h2>Meet the characters</h2>
+      <p><a href="character.html?id=qian">Chito</a> / <a href="character.html?id=ruri">Yuuri</a></p>
+    </aside>
+  </main>
+
+  <footer class="wrap footer">
+    <span>&copy; 2024 Girls' Last Tour &middot; Student project site</span>
+    <a href="contact.html">Write to us</a>
+    <span class="copyright">Artwork belongs to the original creators</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
